@@ -1,0 +1,109 @@
+\documentclass[12pt,oneside,letterpaper,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[margin=2.25cm,headheight=26pt,includeheadfoot]{geometry}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[framed, numbered]{matlab-prettifier}
+\usepackage{changepage}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{caption}
+\usepackage{tocloft}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{titling}
+\usepackage{float}
+\usepackage{comment}
+\usepackage{booktabs}
+\usepackage{indentfirst}
+\usepackage{lscape}
+\usepackage{booktabs,caption}
+\usepackage[flushleft]{threeparttable}
+\usepackage[english]{nomencl}
+\usepackage{xcolor}
+\usepackage{lipsum}
+
+% --- set footer and header ---
+\pagestyle{fancy}
+\fancyhf{}
+
+\setlength{\parindent}{2em}
+\title{Data 225 Project Report} % to reference as \title, dont use \maketitle
+\makeatletter\let\Title\@title\makeatother
+
+
+
+\lstset{language=Matlab,
+style=Matlab-editor,
+basicstyle=\normalsize\mlttfamily,
+numbers=left,
+numberstyle={\scriptsize\color{black}},			% size of the numbers
+numbersep=0.5cm											
+}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{leftmargin=1.5cm,label = Step \arabic*:}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\rmdefault}{ptm}
+
+%\lhead{\Title}
+\rhead{\nouppercase{\rightmark}}
+\lhead{\Title}
+\rfoot{\includegraphics[height=1.5cm]{}} % right header logo
+\setlength\headheight{16pt}
+\setlength{\footskip}{50pt}
+\lhead{\Title} %rightH title
+\cfoot{\thepage}
+
+% --- End of page settings ---
+
+
+
+\begin{document}
+\pagenumbering{roman} 
+\input{sources/0_frontpage.tex}
+
+\newpage
+\doublespacing
+%\addcontentsline{toc}{section}{Table of Contents}
+\renewcommand{\baselinestretch}{1}\normalsize
+\tableofcontents
+\renewcommand{\baselinestretch}{1}\normalsize
+%\singlespacing
+\thispagestyle{fancy} % force page style
+
+\newpage
+\pagenumbering{arabic} 
+\fancyfoot[C]{Page \thepage\ of \pageref{EndOfText}}
+
+
+\input{sources/1_introduction.tex} 
+
+\label{EndOfText}
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\bibliography{document.bib} 
+\bibliographystyle{ieeetr}
+{[1]\href{https://www.cnbc.com/2024/01/20/as-companies-lay-off-even-more-workers-they-could-be-making-a-mistake.html}{https://www.cnbc.com/2024/01/20/as-companies-lay-off-even-more-workers-they-could-be-making-a-mistake.html}}\\
+{[2] \href{https://layoffs.fyi/category/analysis/}{https://layoffs.fyi/category/analysis/}}\\
+{[3] \href{https://www.warntracker.com/}{https://www.warntracker.com/}}\\
+{[4] \href{https://layoffdata.com/data/}{https://layoffdata.com/data/}}\\
+{[5] \href{https://app.grammarly.com/}{https://app.grammarly.com/}}\\
+{[6] \href{https://openai.com/blog/chatgpt}{https://openai.com/blog/chatgpt}}\\
+{[7] \href{https://www.cloudflare.com/learning/security/api/what-is-api-call/}{https://www.cloudflare.com/learning/security/api/what-is-api-call/}}\\
+{[8] \href{https://martinfowler.com/articles/on-pair-programming.html}{https://martinfowler.com/articles/on-pair-programming.html}}\\
+{[9] \href{https://www.computerworld.com/article/1617283/tech-layoffs-in-2023-a-timeline.html}{https://www.computerworld.com/article/1617283/tech-layoffs-in-2023-a-timeline.html}}\\
+
+
+\label{endOfDoc}
+\end{document}
